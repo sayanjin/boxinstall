@@ -67,6 +67,11 @@ function boxy (){
 	  get leafpad
 }
 
+  #geany
+  function gean (){
+	  get geany
+}
+
   #abiword
   function abiw () {
 	  get abiword
@@ -80,6 +85,36 @@ function boxy (){
   #xpdf
   function xpdf () {
 	  get xpdf
+}
+
+  #firefox
+  function fire (){
+	  get firefox
+}
+
+  #chromium
+  function chro (){
+	  get chromium
+}
+
+  #midori
+  function mido (){
+	  get midori
+}
+
+  #rox-filer
+  function roxf (){
+	  get rox-filer
+}
+
+  #tint2
+  function tint (){
+	  get tint2
+}
+
+  #conky
+  function conk (){
+	  get conky
 }
 
   #mplayer
@@ -156,10 +191,17 @@ CONNEXION=$(<"${INPUT}")
   dialog --backtitle "postconfiguration openbox" --title "Choix des applications" \
   --ok-label "Valider" --cancel-label "Quitter" \
   --checklist "Cochez vos applications préférées avec la barre d'espace." 20 70 15 \
-  "leaf" "Leafpad, éditeur de texte " on \
-  "abiw" "abiword editeur" on \
-  "gnum" "gnumeric tableur" off \
-  "xpdf" "Xpdf, suite d'outils pour PDF" off \
+  "leaf" "Leafpad, éditeur de texte " off \
+  "gean" "geany editeur de txte " on \
+  "abiw" "abiword editeur " on \
+  "gnum" "gnumeric tableur " off \
+  "xpdf" "Xpdf, suite d'outils pour PDF " off \
+  "fire" "firefox naviguateur net" off \
+  "chro" "chromium nav internet" off \
+  "mido" "midori nav internet" off \
+  "roxf" "rox-filler pour les archives" on \
+  "tint" "tint2 barre de tache" on \
+  "conk" "conky moniteur system" on \
   "mpla" "GNOME MPlayer, lecteur multimédia " on \
   "vlcl" "VLC, lecteur multimédia" off 2> "${INPUT}"
     
@@ -168,9 +210,16 @@ CONNEXION=$(<"${INPUT}")
   do
   case $i in
   "leaf") leaf ;;
+  "gean") gean ;;
   "abiw") abiw ;;
   "gnum") gnum ;;
   "xpdf") xpdf ;;
+  "fire") fire ;;
+  "chro") chro ;;
+  "mido") mido ;;
+  "roxf") roxf ;;
+  "tint") tint ;;
+  "conk") conk ;;
   "mpla") mpla ;;
   "vlcl") vlcl ;;
   esac
