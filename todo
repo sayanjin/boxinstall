@@ -6,11 +6,15 @@ modifier interface, pour eviter de selectionner une option dans certines fenetre
 ce n'est pas intuitif et retour au 1er menu pour quitter le script, voir si l'installation doit etre en mute 
 avec un retour d'affichage pour un message de reussite...
 
+lxdm:
 l'edit d'initab pour le lancement automatique de lxdm
+peut-etre editer le "par defaut" du panneau penible de devoir cliquer pour choisir "openbox"
+
 
 ajout de logiciel utiles:
 
 une barre de tache est une priorité je pense, penible de "perdre" une application que l'on a reduit
-ou recuperation par le menu click droit
+ou recuperation par le menu click droit:
+je verrai bien tint2 d'abord, a voir ou le lancer en auto et peut-etre avoir un conf predefinie
 
 ajout de themes : quand j'aurai balayer les differents fichiers concernés (l'utilitée du etc/skel, gtkrc,...)
