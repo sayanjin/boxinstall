@@ -1,7 +1,16 @@
-une liste de choses a faire pour que l'installation soit plus simple:
+une liste de choses a faire :
+
+faire un code propre ... ^^
+
+modifier interface, pour eviter de selectionner une option dans certines fenetres il faut faire echap, 
+ce n'est pas intuitif et retour au 1er menu pour quitter le script, voir si l'installation doit etre en mute 
+avec un retour d'affichage pour un message de reussite...
 
 l'edit d'initab pour le lancement automatique de lxdm
 
-ajout de logiciel utiles
+ajout de logiciel utiles:
 
-ajout de themes
+une barre de tache est une priorité je pense, penible de "perdre" une application que l'on a reduit
+ou recuperation par le menu click droit
+
+ajout de themes : quand j'aurai balayer les differents fichiers concernés (l'utilitée du etc/skel, gtkrc,...)
