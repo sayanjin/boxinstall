@@ -2,7 +2,7 @@
 en cours de redaction: 
 
 posinstall openbox pour nutyx
-
+tres inspiré du script bee ( http://bee.saverne.info/ )
 permet d'installer xorg avec openbox
 
 copie les fichiers de config dans /etc/skel pour les futurs creation de nouvel user afin de ne pas toucher aux fichiers
