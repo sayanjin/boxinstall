@@ -8,6 +8,14 @@ avec un retour d'affichage pour un message de reussite...
 
 lxdm:
 l'edit d'initab pour le lancement automatique de lxdm
+ce qui peut etre modifier avec la commande sed;
+  sed -i "s/une occurrence/une autre/g" /etc/initab
+  sed -i "s/id:3:initdefaut:/id:4:initdefaut:/1" /etc/inittab*
+  
+avec cette commande on pourrais aussi ajouter gdm
+  sed -i "s/id:3:initdefaut:/id:5:initdefaut:/1" dialog*
+
+
 peut-etre editer le "par defaut" du panneau penible de devoir cliquer pour choisir "openbox"
 
 
