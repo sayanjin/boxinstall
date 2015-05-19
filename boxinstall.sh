@@ -35,11 +35,12 @@ function boxy (){
 	
 }
 
-# Install lxdm
+  # Install lxdm
   function lxdm (){
     get lxdm
     sed -i "s/id:3:initdefaut:/id:4:initdefaut:/1" /etc/inittab*
   }
+  
   
   ## Install startx
   #function stax (){
