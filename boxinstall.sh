@@ -34,7 +34,7 @@ function boxy (){
 	mkdir /etc/skel/.config
 	cp -rf /etc/xdg/openbox /etc/skel/.config/openbox
 	mkdir /root/.config
-	cp -rf /root/.config/openbox
+	cp -rf /etc/xdg/openbox /root/.config/openbox
 	
 }
 
