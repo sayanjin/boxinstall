@@ -6,6 +6,7 @@ install openbox:
 startx: creer un .xinitrc dans l'user et ajouter le text "openbox"
 
 login manager: se lance automatiquement par inittab
+lxdm: le .conf /etc/lxdm.conf
 
 thunar: pour un fonctionnement du montage des medias amovible ajouter le plug-in thunar-volman
         ainsi que le paquets gvfs (volman, ne devrais pas installer le paquet automatiquement?)
