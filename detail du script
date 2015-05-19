@@ -1,0 +1,14 @@
+pour eviter de commenter le script dans tout les sens je note ca ici:
+
+install openbox:
+  pour faire fonctionner openbox solo, il nous faut xorg en plus
+  
+startx: creer un .xinitrc dans l'user et ajouter le text "openbox"
+
+login manager: se lance automatiquement par inittab
+
+thunar: pour un fonctionnement du montage des medias amovible ajouter le plug-in thunar-volman
+        ainsi que le paquets gvfs (volman, ne devrais pas installer le paquet automatiquement?)
+
+
+
