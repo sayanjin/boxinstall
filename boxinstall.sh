@@ -38,6 +38,7 @@ function boxy (){
 # Install lxdm
   function lxdm (){
     get lxdm
+    sed -i "s/id:3:initdefaut:/id:4:initdefaut:/1" /etc/inittab*
   }
   
   ## Install startx
