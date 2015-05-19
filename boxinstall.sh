@@ -38,7 +38,7 @@ function boxy (){
   # Install lxdm
   function lxdm (){
     get lxdm
-    sed -i "s/id:3:initdefaut:/id:4:initdefaut:/1" /etc/inittab*
+    sed -i "s/id:3:initdefault:/id:4:initdefault:/1" /etc/inittab*
   }
   
   
