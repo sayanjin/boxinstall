@@ -1,7 +1,7 @@
 #!/bin/bash
 # boxinstall.sh - postinstall d'openbox
 # pour un environnement fonctionnel
-#version 02
+#version 03
 DIALOG={DIALOG=dialog}
 INPUT=/tmp/menu.sh.$$
  
@@ -43,6 +43,7 @@ function boxy (){
   ## Install startx
   #function stax (){
     echo openbox > ~/.xinitrc
+    cp ~/.xinitrc /etc/skel
   #}
   
    # Install Thunar
