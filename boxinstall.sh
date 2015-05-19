@@ -31,6 +31,7 @@ function display_output(){
 function boxy (){
 	get xorg
 	get openbox
+	mkdir /etc/skel/.config
 	cp -rf /etc/xdg/openbox /etc/skel/.config/openbox
 	
 }
