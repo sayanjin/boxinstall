@@ -117,8 +117,8 @@ function boxy (){
   #tint2
   function tint (){
 	  get tint2
-	  echo tint2 & >> /etc/skel/.config/openbox/autostart
-          echo tint2 & >> /root/.config/openbox/autostart
+	  sed -i '$a\\ tint2 &' /etc/skel/.config/openbox/autostart
+          sed -i '$a\\ tint2 &' /root/.config/openbox/autostart
 }
 
   #conky
