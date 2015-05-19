@@ -33,6 +33,8 @@ function boxy (){
 	get openbox
 	mkdir /etc/skel/.config
 	cp -rf /etc/xdg/openbox /etc/skel/.config/openbox
+	mkdir /root/.config
+	cp -rf /root/.config/openbox
 	
 }
 
@@ -116,7 +118,7 @@ function boxy (){
   function tint (){
 	  get tint2
 	  echo tint2 & >> /etc/skel/.config/openbox/autostart
-          echo tint2 & >> /etc/skel/.config/openbox/autostart
+          echo tint2 & >> /root/.config/openbox/autostart
 }
 
   #conky
