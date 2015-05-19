@@ -10,8 +10,11 @@ gdm si paquet dispo:
   get gdm
   sed -i "s/id:3:initdefaut:/id:5:initdefaut:/1" dialog*
 
-lxdm
+lxdm (eventuellement)
 peut-etre editer le "par defaut" du panneau penible de devoir cliquer pour choisir "openbox"
+
+sectionner le choix des appli:
+openbox ; login manager; gestionnaire de fichiers; barre de tache (afin d'eviter d'en installer 2);log 
 
 ajout de logiciel utiles:
 
