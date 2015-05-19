@@ -1,2 +1,3 @@
 v01 : 
 v02: ajout tint conky
+v03: startx le xinitrc est ajouter au skel, chaque user prochainement crée pourra demarrer via la commande startx
