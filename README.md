@@ -1,4 +1,4 @@
-# test
+# readme
 en cours de redaction: 
 
 posinstall openbox pour nutyx
@@ -18,4 +18,17 @@ gestionnaire de fichiers, tel
   thunar avec le theme d'icone deja preconfiguré (Tango) , volman et gvfs
   pcmanfm
   
+barre de tach tint2 en autostart
+  
 choix d'autre log de base a installer
+
+Installation:
+(apres l'install de base de nutyx, en restant en root, NE CRRER PAS DE NEW USER AVANT LE SCRIPT)
+
+get wget
+
+wget https://raw.githubusercontent.com/sayanjin/boxinstall/master/boxinstall.sh --no-check-certificate
+
+. boxinstall.sh
+
+
