@@ -1,3 +1,6 @@
 v01 : 
-v02: ajout tint conky
+v02: ajout tint2 conky (sans conf)
 v03: startx le xinitrc est ajouter au skel, chaque user prochainement crée pourra demarrer via la commande startx
+      startx : le .xinitrc est ajouté a /etc/skel pour les futurs new users
+      lxdm est lancé en auto via /etc/inittab par la commande sed -i "s/id:3:initdefault:/id:4:initdefault:/1" /etc/inittab*
+      (le paquet lxdm contient deja la modif pour le skin nutyx)
