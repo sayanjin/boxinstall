@@ -1,7 +1,7 @@
 #!/bin/bash
 # boxinstall.sh - postinstall d'openbox
 # pour un environnement fonctionnel
-#version 03
+#version 04
 DIALOG={DIALOG=dialog}
 INPUT=/tmp/menu.sh.$$
  
@@ -55,6 +55,7 @@ function boxy (){
   function thun (){
 	get tango-icon-theme
     get tango-icon-theme-extras
+    get gnome-icon-theme
     get thunar 
     get thunar-volman 
     get gvfs 
@@ -62,12 +63,23 @@ function boxy (){
    # et de modifier le theme selon
   }
   
-  # Install PCMan File Manager
-  function pcma (){
-    get pcmanfm
-   # possibilte d'ajouter les liens dns le menu d'openbox 
-   # et de modifier le theme selon
-  }
+  #wbar
+  function wbar (){
+	  get wbar
+	  sed -i '$a\\ wbar &' /etc/skel/.config/openbox/autostart
+      sed -i '$a\\ wbar &' /root/.config/openbox/autostart
+}
+  #obmenu
+  function menu (){
+	  get obmenu
+}
+
+  #conky
+  function conk (){
+	  get conky
+	  sed -i '$a\\ conky &' /etc/skel/.config/openbox/autostart
+      sed -i '$a\\ conky &' /root/.config/openbox/autostart
+}
   
   #leafpad
   function leaf (){
@@ -119,11 +131,6 @@ function boxy (){
 	  get tint2
 	  sed -i '$a\\ tint2 &' /etc/skel/.config/openbox/autostart
           sed -i '$a\\ tint2 &' /root/.config/openbox/autostart
-}
-
-  #conky
-  function conk (){
-	  get conky
 }
 
   #mplayer
@@ -184,17 +191,37 @@ CONNEXION=$(<"${INPUT}")
   dialog --backtitle "postconfiguration openbox" --title "Gestionnaire de fichiers" \
   --ok-label "Valider" --cancel-label "Quitter" \
   --radiolist "Installation de votre gestionnaire de fichiers préféré.\nSélection avec la barre d'espace." 20 70 2 \
-  "thun" "Thunar, avec theme tango" on \
-  "pcma" "PCman FM, navigateur de fichiers avec onglets" off 2> "${INPUT}"
+  "thun" "Thunar, avec theme tango" on 2> "${INPUT}" 
   
   FILEMANAGER=$(<"${INPUT}")
   
   case $FILEMANAGER in
   thun) thun ;;
-  pcma) pcma ;;
   esac
+  
+  # --checklist texte hauteur largeur hauteur-de-liste [ marqueur1 item1 état] ...
+  dialog --backtitle "postconfiguration openbox" --title "tools et menu bureau" \
+  --ok-label "Valider" --cancel-label "Quitter" \
+  --checklist "Cochez vos applications préférées avec la barre d'espace." 20 70 15 \
+  "wbar" "barre d'applications (seulement en 32bits)" off \
+  "menu" "ob-menu gui pour gerer le menu openbox" on \
+  "tint" "tint2 barre de tache" on \
+  "conk" "conky moniteur system" off 2> "${INPUT}"
+    
+  # traitement de la réponse
+  for i in $(<"${INPUT}")
+  do
+  case $i in
+  "wbar") wbar ;;
+  "menu") menu ;;
+  "tint") tint ;;
+  "conk") conk ;;
+  "mpla") mpla ;;
+  "vlcl") vlcl ;;
+  esac
+  done
  
-  # Install Apps
+  # Install utilitaire de conf
   
   # --checklist texte hauteur largeur hauteur-de-liste [ marqueur1 item1 état] ...
   dialog --backtitle "postconfiguration openbox" --title "Choix des applications" \
@@ -209,8 +236,6 @@ CONNEXION=$(<"${INPUT}")
   "chro" "chromium nav internet" off \
   "mido" "midori nav internet" off \
   "gimp" "editeur dessin" on \
-  "tint" "tint2 barre de tache" on \
-  "conk" "conky moniteur system" on \
   "mpla" "GNOME MPlayer, lecteur multimédia " on \
   "vlcl" "VLC, lecteur multimédia" off 2> "${INPUT}"
     
@@ -227,8 +252,6 @@ CONNEXION=$(<"${INPUT}")
   "chro") chro ;;
   "mido") mido ;;
   "gimp") gimp ;;
-  "tint") tint ;;
-  "conk") conk ;;
   "mpla") mpla ;;
   "vlcl") vlcl ;;
   esac
