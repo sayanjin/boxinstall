@@ -4,3 +4,7 @@ v03: startx le xinitrc est ajouté au skel, chaque user prochainement crée pour
       le .xinitrc est ajouté a /etc/skel pour les futurs new users
       lxdm est lancé en auto via /etc/inittab par la commande sed -i "s/id:3:initdefault:/id:4:initdefault:/1" /etc/inittab*
       (le paquet lxdm contient deja la modif pour le skin nutyx)
+v04: separation de menu dans le script install/startx,lm/gestionnaire/tools menu/logiciels
+      les tools sont preconfigurés pour etre en autostart
+      retrait de pcmanfm (paquet non dispo a ce jour)
+      thunar:ajout du gnome-icon-theme
