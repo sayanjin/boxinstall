@@ -109,9 +109,9 @@ function boxy (){
 	  get midori
 }
 
-  #rox-filer
-  function roxf (){
-	  get rox-filer
+  #gimp
+  function gimp (){
+	  get gimp
 }
 
   #tint2
@@ -208,7 +208,7 @@ CONNEXION=$(<"${INPUT}")
   "fire" "firefox naviguateur net" off \
   "chro" "chromium nav internet" off \
   "mido" "midori nav internet" off \
-  "roxf" "rox-filler pour les archives" on \
+  "gimp" "editeur dessin" on \
   "tint" "tint2 barre de tache" on \
   "conk" "conky moniteur system" on \
   "mpla" "GNOME MPlayer, lecteur multimédia " on \
@@ -226,7 +226,7 @@ CONNEXION=$(<"${INPUT}")
   "fire") fire ;;
   "chro") chro ;;
   "mido") mido ;;
-  "roxf") roxf ;;
+  "gimp") gimp ;;
   "tint") tint ;;
   "conk") conk ;;
   "mpla") mpla ;;
