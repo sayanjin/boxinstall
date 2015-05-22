@@ -173,7 +173,7 @@ esac
  
  # Install Login
   dialog --backtitle "postconfiguration openbox" --title "Session" \
-  --ok-label "Valider" --cancel-label "Quitter" \
+  --ok-label "Valider" --cancel-label "Passer" \
   --radiolist "Veuillez choisir le mode de connexion à votre session.\nSélection avec la barre d'espace." 20 70 3 \
   "lxdm" "lxdm, gestionnaire de connexion graphique" on \
   "stax" "startx lance openbox apres login" off 2> "${INPUT}"
@@ -189,7 +189,7 @@ CONNEXION=$(<"${INPUT}")
   
   # Install File Manager
   dialog --backtitle "postconfiguration openbox" --title "Gestionnaire de fichiers" \
-  --ok-label "Valider" --cancel-label "Quitter" \
+  --ok-label "Valider" --cancel-label "Passer" \
   --radiolist "Installation de votre gestionnaire de fichiers préféré.\nSélection avec la barre d'espace." 20 70 2 \
   "thun" "Thunar, avec theme tango" on 2> "${INPUT}" 
   
@@ -201,7 +201,7 @@ CONNEXION=$(<"${INPUT}")
   
   # --checklist texte hauteur largeur hauteur-de-liste [ marqueur1 item1 état] ...
   dialog --backtitle "postconfiguration openbox" --title "tools et menu bureau" \
-  --ok-label "Valider" --cancel-label "Quitter" \
+  --ok-label "Valider" --cancel-label "Passer" \
   --checklist "Cochez vos applications préférées avec la barre d'espace." 20 70 15 \
   "wbar" "barre d'applications (seulement en 32bits)" off \
   "menu" "obmenu gui pour gerer le menu openbox" on \
@@ -225,7 +225,7 @@ CONNEXION=$(<"${INPUT}")
   
   # --checklist texte hauteur largeur hauteur-de-liste [ marqueur1 item1 état] ...
   dialog --backtitle "postconfiguration openbox" --title "Choix des applications" \
-  --ok-label "Valider" --cancel-label "Quitter" \
+  --ok-label "Valider" --cancel-label "Passer" \
   --checklist "Cochez vos applications préférées avec la barre d'espace." 20 70 15 \
   "leaf" "Leafpad, éditeur de texte " off \
   "gean" "geany editeur de txte " on \
