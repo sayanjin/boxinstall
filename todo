@@ -7,10 +7,8 @@ ce n'est pas intuitif et retour au 1er menu pour quitter le script, voir si l'in
 avec un retour d'affichage pour un message de reussite...
 
 openbox: avoir un menu en fonction de nos install, pas celui du source (un generateur est possible)
-
-gdm si paquet dispo:
-  get gdm
-  sed -i "s/id:3:initdefaut:/id:5:initdefaut:/1" dialog*
+        ou un edit de chaque lignes
+        
 
 lxdm (eventuellement)
 peut-etre editer le "par defaut" du panneau penible de devoir cliquer pour choisir "openbox"
@@ -20,14 +18,7 @@ openbox ; login manager; gestionnaire de fichiers; barre de tache (afin d'eviter
 
 ajout de logiciel utiles:
 
-une barre de tache est une priorité je pense, penible de "perdre" une application que l'on a reduit
-ou recuperation par le menu click droit:
-je verrai bien tint2 d'abord, a voir ou le lancer en auto et peut-etre avoir un conf predefinie
-
-tint2: a ajouter dans le autostart (/home/user/.config/openbox/autostart)
- on aurai un truc comme ca: echo tint2 & >> /etc/skel/.config/openbox/autostart
-                            echo tint2 & >> /etc/skel/.config/openbox/autostart
-                            attention au >>, un seul reset le fichier...
+tint2= ajout de conf supplemetaire
 
 ajout de themes : quand j'aurai balayer les differents fichiers concernés (l'utilitée du etc/skel, gtkrc,...)
 
@@ -35,5 +26,7 @@ paquets non dispo:
  pcmanfm
  wbar, le 32 bit fonctionne mais pas le 64
  les outils de conf, obconf, obmenu, lxappearance
+
+probleme de son: viendrai de gstreamer qui ne sont pas installés a verifier
 
 ajout feh: pour la gestion d'un fond d'ecran
