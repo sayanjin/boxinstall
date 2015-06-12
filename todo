@@ -6,6 +6,8 @@ modifier interface, pour eviter de selectionner une option dans certines fenetre
 ce n'est pas intuitif et retour au 1er menu pour quitter le script, voir si l'installation doit etre en mute 
 avec un retour d'affichage pour un message de reussite...
 
+lister la partie openbox: dissocier openbox et xorg par exemple afin d'identifier les differents logiciel utilisés
+
 openbox: avoir un menu en fonction de nos install, pas celui du source (un generateur est possible)
 
 gdm si paquet dispo:
@@ -20,6 +22,12 @@ openbox ; login manager; gestionnaire de fichiers; barre de tache (afin d'eviter
 
 ajout de logiciel utiles:
 
+Onglet audio/video
+
+alsa
+gstreamer gstreamer-base en cocher
+les autres pack gstreamer
+
 une barre de tache est une priorité je pense, penible de "perdre" une application que l'on a reduit
 ou recuperation par le menu click droit:
 je verrai bien tint2 d'abord, a voir ou le lancer en auto et peut-etre avoir un conf predefinie
@@ -27,7 +35,7 @@ je verrai bien tint2 d'abord, a voir ou le lancer en auto et peut-etre avoir un 
 tint2: a ajouter dans le autostart (/home/user/.config/openbox/autostart)
  on aurai un truc comme ca: echo tint2 & >> /etc/skel/.config/openbox/autostart
                             echo tint2 & >> /etc/skel/.config/openbox/autostart
-                            attention au >>, un seul reset le fichier...
+                            attention au >>, un seul reset le fichier.
 
 ajout de themes : quand j'aurai balayer les differents fichiers concernés (l'utilitée du etc/skel, gtkrc,...)
 
@@ -35,3 +43,4 @@ paquets non dispo:
  pcmanfm
  wbar, le 32 bit fonctionne mais pas le 64
  les outils de conf, obconf, obmenu, lxappearance
+ 
