@@ -8,3 +8,8 @@ v04d: separation de menu dans le script install/startx,lm/gestionnaire/tools men
       les tools sont preconfigurés pour etre en autostart
       retrait de pcmanfm (paquet non dispo a ce jour)
       thunar:ajout du gnome-icon-theme
+v05:
+      rectifications mineurs dont je ne me souviens pas, 
+      ajout du paquet flash player de tester le son sur internet
+      ajout onglet audio= alsa utils pour alsa mixer
+                          les paquet gstreamer, gstreamer et e paquet base devrais suffire
