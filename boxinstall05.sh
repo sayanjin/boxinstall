@@ -302,6 +302,7 @@ CONNEXION=$(<"${INPUT}")
   "goo1") goo1 ;;
   "ugl1") ugl1 ;;
   esac
+  done
   
   # --checklist texte hauteur largeur hauteur-de-liste [ marqueur1 item1 état] ...
   dialog --backtitle "postconfiguration openbox" --title "tools et menu bureau" \
