@@ -47,7 +47,7 @@ function boxy (){
   
   ## Install startx
   #function stax (){
-    echo openbox > ~/.xinitrc
+    echo openbox-session > ~/.xinitrc
     cp ~/.xinitrc /etc/skel
   #}
   
