@@ -277,6 +277,7 @@ CONNEXION=$(<"${INPUT}")
   "gnum") gnum ;;
   "xpdf") xpdf ;;
   "gimp") gimp ;;
+  "htop") htop ;;
   "mpla") mpla ;;
   "vlcl") vlcl ;;
   esac
