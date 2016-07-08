@@ -128,7 +128,12 @@ function boxy (){
 	  get midori
 }
 
-#htop
+  #filezilla
+  function filz (){
+	  get filezilla
+}
+
+  #htop
   function htop () {
 	  get htop
 }
@@ -241,7 +246,8 @@ CONNEXION=$(<"${INPUT}")
   --checklist "Cochez vos applications préférées avec la barre d'espace." 20 70 15 \
   "fire" "firefox naviguateur net" off \
   "chro" "chromium nav internet" off \
-  "mido" "midori nav internet" off 2> "${INPUT}"
+  "mido" "midori nav internet" off \
+  "filz" "filezilla client FTP" off 2> "${INPUT}"
     
   # traitement de la réponse
   for i in $(<"${INPUT}")
@@ -250,6 +256,7 @@ CONNEXION=$(<"${INPUT}")
   "fire") fire ;;
   "chro") chro ;;
   "mido") mido ;;
+  "filz") filz ;;
   esac
   done
   
