@@ -204,6 +204,7 @@ CONNEXION=$(<"${INPUT}")
   
   case $FILEMANAGER in
   thun) thun ;;
+  pcfm) pcfm ;;
   esac
   
   # --checklist texte hauteur largeur hauteur-de-liste [ marqueur1 item1 état] ...
