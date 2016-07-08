@@ -57,7 +57,8 @@ function boxy (){
     get tango-icon-theme-extras
     get gnome-icon-theme
     get thunar 
-    get thunar-volman 
+    get thunar-volman
+    get thunar-archive-plugin
     get gvfs 
    # possibilte d'ajouter les liens dns le menu d'openbox 
    # et de modifier le theme selon
