@@ -161,6 +161,16 @@ function boxy (){
           sed -i '$a\\ tint2 &' /root/.config/openbox/autostart
 }
 
+#avidemux
+  function avid () {
+	  get avidemux
+}
+
+#rhythmbox
+  function rtbx () {
+	  get rhythmbox
+}
+
   #mplayer
   function mpla () {
 	  get mplayer
@@ -286,6 +296,8 @@ CONNEXION=$(<"${INPUT}")
   "xpdf" "Xpdf, suite d'outils pour PDF " off \
   "gimp" "editeur dessin" off \
   "htop" "gestionnaire de taches" on \
+  "avid" "avidemux logiciel de video" off\
+  "rtbx" "rhytmbox player de music " off\
   "mpla" "GNOME MPlayer, lecteur multimédia " on \
   "vlcl" "VLC, lecteur multimédia" off 2> "${INPUT}"
     
@@ -300,6 +312,8 @@ CONNEXION=$(<"${INPUT}")
   "xpdf") xpdf ;;
   "gimp") gimp ;;
   "htop") htop ;;
+  "avid") avid ;;
+  "rtbx") rtbx ;;
   "mpla") mpla ;;
   "vlcl") vlcl ;;
   esac
