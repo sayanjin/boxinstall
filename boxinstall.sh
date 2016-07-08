@@ -296,7 +296,7 @@ CONNEXION=$(<"${INPUT}")
   "xpdf" "Xpdf, suite d'outils pour PDF " off \
   "gimp" "editeur dessin" off \
   "htop" "gestionnaire de taches" on \
-  "avid" "avidemux logiciel de video" off\
+  "avid" "avidemux logiciel de video (qt-gui)" off\
   "rtbx" "rhytmbox player de music " off\
   "mpla" "GNOME MPlayer, lecteur multimédia " on \
   "vlcl" "VLC, lecteur multimédia" off 2> "${INPUT}"
