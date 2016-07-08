@@ -225,8 +225,6 @@ CONNEXION=$(<"${INPUT}")
   "menu") menu ;;
   "tint") tint ;;
   "conk") conk ;;
-  "mpla") mpla ;;
-  "vlcl") vlcl ;;
   esac
   done
  
