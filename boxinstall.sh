@@ -166,6 +166,11 @@ function boxy (){
 	  get avidemux
 }
 
+#avidemux
+  function hnbk () {
+	  get handbrake
+}
+
 #rhythmbox
   function rtbx () {
 	  get rhythmbox
@@ -297,6 +302,7 @@ CONNEXION=$(<"${INPUT}")
   "gimp" "editeur dessin" off \
   "htop" "gestionnaire de taches" on \
   "avid" "avidemux logiciel de video (qt-gui)" off\
+  "hnbk" "handbrake logiciel de video (qt-gui)" off\
   "rtbx" "rhytmbox player de music " off\
   "mpla" "GNOME MPlayer, lecteur multimédia " on \
   "vlcl" "VLC, lecteur multimédia" off 2> "${INPUT}"
@@ -313,6 +319,7 @@ CONNEXION=$(<"${INPUT}")
   "gimp") gimp ;;
   "htop") htop ;;
   "avid") avid ;;
+  "hnbk") hnbk ;;
   "rtbx") rtbx ;;
   "mpla") mpla ;;
   "vlcl") vlcl ;;
