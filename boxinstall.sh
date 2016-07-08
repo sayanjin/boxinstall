@@ -133,6 +133,11 @@ function boxy (){
 	  get filezilla
 }
 
+#transmission
+  function trsm (){
+	  get transmission
+}
+
   #htop
   function htop () {
 	  get htop
@@ -247,6 +252,7 @@ CONNEXION=$(<"${INPUT}")
   "fire" "firefox naviguateur net" off \
   "chro" "chromium nav internet" off \
   "mido" "midori nav internet" off \
+  "trsm" "transmission client torrent" off \
   "filz" "filezilla client FTP" off 2> "${INPUT}"
     
   # traitement de la réponse
@@ -257,6 +263,7 @@ CONNEXION=$(<"${INPUT}")
   "chro") chro ;;
   "mido") mido ;;
   "filz") filz ;;
+  "trsm") trsm ;;
   esac
   done
   
