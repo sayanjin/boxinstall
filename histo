@@ -8,3 +8,6 @@ v04: separation de menu dans le script install/startx,lm/gestionnaire/tools menu
       les tools sont preconfigurés pour etre en autostart
       retrait de pcmanfm (paquet non dispo a ce jour)
       thunar:ajout du gnome-icon-theme
+v05: modif sur le startx qui ne lancais pas autostart
+     ajout du menu logiciel internet avec choix de naviguateur, filezilla, transmission, pidgin
+     ajout de pcmanfm
