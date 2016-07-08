@@ -128,6 +128,11 @@ function boxy (){
 	  get midori
 }
 
+#htop
+  function htop () {
+	  get htop
+}
+
   #gimp
   function gimp (){
 	  get gimp
@@ -258,6 +263,7 @@ CONNEXION=$(<"${INPUT}")
   "gnum" "gnumeric tableur " off \
   "xpdf" "Xpdf, suite d'outils pour PDF " off \
   "gimp" "editeur dessin" on \
+  "htop" "gestionnaire de taches" on \
   "mpla" "GNOME MPlayer, lecteur multimédia " on \
   "vlcl" "VLC, lecteur multimédia" off 2> "${INPUT}"
     
