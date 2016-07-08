@@ -231,6 +231,24 @@ CONNEXION=$(<"${INPUT}")
   # Install utilitaire de conf
   
   # --checklist texte hauteur largeur hauteur-de-liste [ marqueur1 item1 état] ...
+  dialog --backtitle "postconfiguration openbox" --title "Choix naviguateur net" \
+  --ok-label "Valider" --cancel-label "Passer" \
+  --checklist "Cochez vos applications préférées avec la barre d'espace." 20 70 15 \
+  "fire" "firefox naviguateur net" off \
+  "chro" "chromium nav internet" off \
+  "mido" "midori nav internet" off 2> "${INPUT}"
+    
+  # traitement de la réponse
+  for i in $(<"${INPUT}")
+  do
+  case $i in
+  "fire") fire ;;
+  "chro") chro ;;
+  "mido") mido ;;
+  esac
+  done
+  
+  # --checklist texte hauteur largeur hauteur-de-liste [ marqueur1 item1 état] ...
   dialog --backtitle "postconfiguration openbox" --title "Choix des applications" \
   --ok-label "Valider" --cancel-label "Passer" \
   --checklist "Cochez vos applications préférées avec la barre d'espace." 20 70 15 \
@@ -239,9 +257,6 @@ CONNEXION=$(<"${INPUT}")
   "abiw" "abiword editeur " on \
   "gnum" "gnumeric tableur " off \
   "xpdf" "Xpdf, suite d'outils pour PDF " off \
-  "fire" "firefox naviguateur net" off \
-  "chro" "chromium nav internet" off \
-  "mido" "midori nav internet" off \
   "gimp" "editeur dessin" on \
   "mpla" "GNOME MPlayer, lecteur multimédia " on \
   "vlcl" "VLC, lecteur multimédia" off 2> "${INPUT}"
@@ -255,9 +270,6 @@ CONNEXION=$(<"${INPUT}")
   "abiw") abiw ;;
   "gnum") gnum ;;
   "xpdf") xpdf ;;
-  "fire") fire ;;
-  "chro") chro ;;
-  "mido") mido ;;
   "gimp") gimp ;;
   "mpla") mpla ;;
   "vlcl") vlcl ;;
