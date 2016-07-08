@@ -262,7 +262,7 @@ CONNEXION=$(<"${INPUT}")
   "abiw" "abiword editeur " on \
   "gnum" "gnumeric tableur " off \
   "xpdf" "Xpdf, suite d'outils pour PDF " off \
-  "gimp" "editeur dessin" on \
+  "gimp" "editeur dessin" off \
   "htop" "gestionnaire de taches" on \
   "mpla" "GNOME MPlayer, lecteur multimédia " on \
   "vlcl" "VLC, lecteur multimédia" off 2> "${INPUT}"
