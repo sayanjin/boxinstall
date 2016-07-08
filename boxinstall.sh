@@ -79,6 +79,7 @@ function boxy (){
   #obmenu
   function menu (){
 	  get obmenu
+	  get python-gtk
 }
 
   #conky
