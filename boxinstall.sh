@@ -138,6 +138,11 @@ function boxy (){
 	  get transmission
 }
 
+#pidgin
+  function pidg (){
+	  get pidgin
+}
+
   #htop
   function htop () {
 	  get htop
@@ -252,6 +257,7 @@ CONNEXION=$(<"${INPUT}")
   "fire" "firefox naviguateur net" off \
   "chro" "chromium nav internet" off \
   "mido" "midori nav internet" off \
+  "pidg" "pidgin messagerie multiprotocol" off \
   "trsm" "transmission client torrent" off \
   "filz" "filezilla client FTP" off 2> "${INPUT}"
     
@@ -262,6 +268,7 @@ CONNEXION=$(<"${INPUT}")
   "fire") fire ;;
   "chro") chro ;;
   "mido") mido ;;
+  "pidg") pidg ;;
   "filz") filz ;;
   "trsm") trsm ;;
   esac
