@@ -246,7 +246,7 @@ CONNEXION=$(<"${INPUT}")
   # Install utilitaire de conf
   
   # --checklist texte hauteur largeur hauteur-de-liste [ marqueur1 item1 état] ...
-  dialog --backtitle "postconfiguration openbox" --title "Choix naviguateur net" \
+  dialog --backtitle "postconfiguration openbox" --title "Choix log internet" \
   --ok-label "Valider" --cancel-label "Passer" \
   --checklist "Cochez vos applications préférées avec la barre d'espace." 20 70 15 \
   "fire" "firefox naviguateur net" off \
