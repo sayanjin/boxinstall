@@ -63,6 +63,12 @@ function boxy (){
    # et de modifier le theme selon
   }
   
+  #install pcmanfm 
+   function pcfm (){
+      get pcmanfm
+      get gvfs 
+}
+
   #wbar
   function wbar (){
 	  get wbar
@@ -191,6 +197,7 @@ CONNEXION=$(<"${INPUT}")
   dialog --backtitle "postconfiguration openbox" --title "Gestionnaire de fichiers" \
   --ok-label "Valider" --cancel-label "Passer" \
   --radiolist "Installation de votre gestionnaire de fichiers préféré.\nSélection avec la barre d'espace." 20 70 2 \
+  "thun" "Thunar, avec theme tango"  off \
   "thun" "Thunar, avec theme tango" on 2> "${INPUT}" 
   
   FILEMANAGER=$(<"${INPUT}")
