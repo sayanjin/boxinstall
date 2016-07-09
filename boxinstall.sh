@@ -42,7 +42,7 @@ function boxy (){
 	get obconf
 	wget https://raw.githubusercontent.com/sayanjin/boxinstall/master/menu.xml --no-check-certificate
 	mkdir /etc/skel/.config
-	mv menu.xml /etc/skel/.config/openbox
+	cp -rf menu.xml /etc/skel/.config/openbox
 	cp -rf /etc/xdg/openbox /etc/skel/.config/openbox
 	mkdir /root/.config
 	cp -rf /etc/xdg/openbox /root/.config/openbox
