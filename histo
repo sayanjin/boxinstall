@@ -11,3 +11,5 @@ v04: separation de menu dans le script install/startx,lm/gestionnaire/tools menu
 v05: modif sur le startx qui ne lancais pas autostart
      ajout du menu logiciel internet avec choix de naviguateur, filezilla, transmission, pidgin
      ajout de pcmanfm
+v06: ajout de la commande nu dans le script pour creer un nouvel utilisateur
+     fin de boucle du script qui recommencai a la fin de la postinstall
