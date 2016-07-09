@@ -16,13 +16,15 @@ peut-etre editer le "par defaut" du panneau penible de devoir cliquer pour chois
 sectionner le choix des appli:
 openbox ; login manager; gestionnaire de fichiers; barre de tache (afin d'eviter d'en installer 2);log 
 
-ajout de logiciel utiles:
+ajout de logiciel utiles: il y en a plein, trop, l'idée est de rester light alors que je viens de proposer
+                          des log avec qt alors que la majorité fonctionne avec GTK.
 
-tint2= ajout de conf supplemetaire
+tint2= ajout de conf supplemetaire, la config de ce log peut etre tres poussé, je doit regarder si j'en choisi un ou 
+       si je peut le proposer dans les themes
+
+mettre un standard de conky moins voyant que celui proposé et avoir wbar preconfiguré
 
 ajout de themes : quand j'aurai balayer les differents fichiers concernés (l'utilitée du etc/skel, gtkrc,...)
-
-gerer les preconfiguration du menu d openbox et de wbar
 
 probleme de son: viendrai de gstreamer qui ne sont pas installés a verifier
 
