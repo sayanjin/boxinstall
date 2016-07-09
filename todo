@@ -22,10 +22,7 @@ tint2= ajout de conf supplemetaire
 
 ajout de themes : quand j'aurai balayer les differents fichiers concernés (l'utilitée du etc/skel, gtkrc,...)
 
-paquets non dispo:
- pcmanfm
- wbar, le 32 bit fonctionne mais pas le 64
- les outils de conf, obconf, obmenu, lxappearance
+gerer les preconfiguration du menu d openbox et de wbar
 
 probleme de son: viendrai de gstreamer qui ne sont pas installés a verifier
 
