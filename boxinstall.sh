@@ -28,13 +28,23 @@ function display_output(){
 # Purpose - display current system date & time
 #
 	
+#function boxy (){
+#	get xorg
+#	get openbox
+#	mkdir /etc/skel/.config
+#	cp -rf /etc/xdg/openbox /etc/skel/.config/openbox
+#	mkdir /root/.config
+#	cp -rf /etc/xdg/openbox /root/.config/openbox
+
 function boxy (){
 	get xorg
 	get openbox
+	wget https://raw.githubusercontent.com/sayanjin/boxinstall/master/menu.xml --no-check-certificate
 	mkdir /etc/skel/.config
 	cp -rf /etc/xdg/openbox /etc/skel/.config/openbox
 	mkdir /root/.config
 	cp -rf /etc/xdg/openbox /root/.config/openbox
+	cp -rf menu.xml /root/.config/openbox
 	
 }
 
