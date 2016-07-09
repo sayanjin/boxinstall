@@ -340,7 +340,7 @@ CONNEXION=$(<"${INPUT}")
   NEWUSER=$(<"${INPUT}")
   
   case $NEWUSER in
-  user) user ;;
+  user) user ;; echo "Fin de la configuration"; break ;;
   Exit) echo "Bye"; break;;
   esac
   done
