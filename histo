@@ -13,3 +13,4 @@ v05: modif sur le startx qui ne lancais pas autostart
      ajout de pcmanfm
 v06: ajout de la commande nu dans le script pour creer un nouvel utilisateur
      fin de boucle du script qui recommencai a la fin de la postinstall
+v07: ajout d'un menu.xml plus coherent, l'officiel est assez etonnant, le probleme c'est que j'ecrase l'original
