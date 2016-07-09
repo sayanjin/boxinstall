@@ -186,6 +186,10 @@ function boxy (){
 	  get vlc
 }
 
+#user
+  function user () {
+	  nu
+}
 
 
 #
@@ -323,6 +327,21 @@ CONNEXION=$(<"${INPUT}")
   "rtbx") rtbx ;;
   "mpla") mpla ;;
   "vlcl") vlcl ;;
+  esac
+  done
+  
+  # Install new user
+  dialog --backtitle "postconfiguration openbox" --title "nouvel utilisateur" \
+  --ok-label "Valider" --cancel-label "Passer" \
+  --radiolist "creer un nouvel user.\nSélection avec la barre d'espace." 20 70 2 \
+  "user" "creer un utilisateur non root"  on \
+  "Exit" "quitter l'installation" off 2> "${INPUT}" 
+  
+  NEWUSER=$(<"${INPUT}")
+  
+  case $NEWUSER in
+  user) user ;;
+  Exit) echo "Bye"; break;;
   esac
   done
   
