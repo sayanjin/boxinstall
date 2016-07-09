@@ -39,6 +39,7 @@ function display_output(){
 function boxy (){
 	get xorg
 	get openbox
+	get obconf
 	wget https://raw.githubusercontent.com/sayanjin/boxinstall/master/menu.xml --no-check-certificate
 	mkdir /etc/skel/.config
 	mv menu.xml /etc/skel/.config/openbox
