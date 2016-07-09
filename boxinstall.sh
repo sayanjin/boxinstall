@@ -46,6 +46,7 @@ function boxy (){
 	cp -rf menu.xml /root/.config/openbox
 	cp -rf /etc/xdg/openbox /root/.config/openbox
 	get obconf
+	get alsa-utils
 	
 }
 
