@@ -344,8 +344,6 @@ CONNEXION=$(<"${INPUT}")
   Exit) echo "Bye"; break;;
   esac
   done
-  
-done
  
 # if temp files found, delete em
 [ -f $OUTPUT ] && rm $OUTPUT
