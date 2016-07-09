@@ -94,6 +94,14 @@ function boxy (){
 	  get python-gtk
 }
 
+  #numlockx
+  function numl (){
+	  get numlockx
+	  sed -i '$a\\ numlockx &' /etc/skel/.config/openbox/autostart
+      sed -i '$a\\ numlockx &' /root/.config/openbox/autostart
+	  
+}
+
   #conky
   function conk (){
 	  get conky
@@ -272,6 +280,7 @@ CONNEXION=$(<"${INPUT}")
   --ok-label "Valider" --cancel-label "Passer" \
   --checklist "Cochez vos applications préférées avec la barre d'espace." 20 70 15 \
   "wbar" "barre d'applications (seulement en 32bits)" off \
+  "numl" "numlockx permet d'activer en auto le padlock grandement recommandé sur pc fixe" on \
   "menu" "obmenu gui pour gerer le menu openbox" on \
   "tint" "tint2 barre de tache" on \
   "lxdp" "lxde panel" off\
@@ -282,6 +291,7 @@ CONNEXION=$(<"${INPUT}")
   do
   case $i in
   "wbar") wbar ;;
+  "numl") numl ;; 
   "menu") menu ;;
   "tint") tint ;;
   "lxdp") lxdp ;;
