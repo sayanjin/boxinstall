@@ -77,7 +77,7 @@
 	<menu id="apps-net-menu" label="Internet">
 		<item label="Midori">
 			<action name="Execute">
-				<execute></execute>
+				<execute>midori</execute>
 			</action>
 		</item>
 		<item label="Firefox">
@@ -230,6 +230,11 @@
 		</item>
 	</menu>
 	<menu id="system-menu" label="System">
+		<item label="obmenu">
+			<action name="Execute">
+				<execute>/usr/bin/obmenu</execute>
+			</action>
+		</item>
 		<item label="Openbox Configuration Manager">
 			<action name="Execute">
 				<command>obconf</command>
