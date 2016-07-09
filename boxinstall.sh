@@ -173,6 +173,13 @@ function boxy (){
           sed -i '$a\\ tint2 &' /root/.config/openbox/autostart
 }
 
+#lxde-panel
+  function lxdp (){
+	  get lxde-panel
+	  sed -i '$a\\ lxpanel &' /etc/skel/.config/openbox/autostart
+          sed -i '$a\\ lxpanel &' /root/.config/openbox/autostart
+}
+
 #avidemux
   function avid () {
 	  get avidemux
@@ -267,6 +274,7 @@ CONNEXION=$(<"${INPUT}")
   "wbar" "barre d'applications (seulement en 32bits)" off \
   "menu" "obmenu gui pour gerer le menu openbox" on \
   "tint" "tint2 barre de tache" on \
+  "lxdp" "lxde panel" off\
   "conk" "conky moniteur system" off 2> "${INPUT}"
     
   # traitement de la réponse
@@ -276,6 +284,7 @@ CONNEXION=$(<"${INPUT}")
   "wbar") wbar ;;
   "menu") menu ;;
   "tint") tint ;;
+  "lxdp") lxdp ;;
   "conk") conk ;;
   esac
   done
