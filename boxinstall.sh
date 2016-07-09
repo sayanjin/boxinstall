@@ -41,10 +41,10 @@ function boxy (){
 	get openbox
 	wget https://raw.githubusercontent.com/sayanjin/boxinstall/master/menu.xml --no-check-certificate
 	mkdir /etc/skel/.config
-	cp -rf /etc/xdg/openbox/ /etc/skel/.config/openbox/
+	cp -rf /etc/xdg/openbox /etc/skel/.config/
 	mkdir /root/.config
 	cp -rf menu.xml /root/.config/openbox
-	cp -rf /etc/xdg/openbox /root/.config/openbox
+	cp -rf /etc/xdg/openbox /root/.config/
 	get obconf
 	get alsa-utils
 	
