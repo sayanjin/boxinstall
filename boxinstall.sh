@@ -63,6 +63,29 @@ function boxy (){
     cp ~/.xinitrc /etc/skel
   #}
   
+  # Install Autostartx
+  function star (){
+    wget https://raw.githubusercontent.com/sayanjin/boxinstall/devel/profile
+    cd /etc/skel/
+    mv .profile .profile-backup
+    mv /root/profile /etc/skel/.profile
+  }
+  
+  # Install Autologin + Autostartx
+  function auto (){
+    # Autologin
+    wget https://raw.githubusercontent.com/sayanjin/boxinstall/devel/autologin
+    #cd $BROOT/sbin/
+    sed -e "s/user/$USER/g" autologin > autologin.tmp && mv autologin.tmp autologin
+    chmod +x autologin
+    mv autologin /usr/sbin/
+    cd /etc/
+    cp inittab inittab-backup
+    sed -e "s:38400 tty1:-n -l /usr/sbin/autologin 38400 tty1:g" inittab > inittab.tmp && mv inittab.tmp inittab
+    # Autostartx
+    stax # function
+  }
+  
    # Install Thunar
   function thun (){
 	get tango-icon-theme
@@ -250,6 +273,8 @@ esac
   --ok-label "Valider" --cancel-label "Passer" \
   --radiolist "Veuillez choisir le mode de connexion à votre session.\nSélection avec la barre d'espace." 20 70 3 \
   "lxdm" "lxdm, gestionnaire de connexion graphique" on \
+  "auto" "autologin sans user ni mdp" off \
+  "star" "Auto startx après un login texte sur le TTY1" off \
   "stax" "startx lance openbox apres login" off 2> "${INPUT}"
   
 CONNEXION=$(<"${INPUT}")
