@@ -71,7 +71,7 @@ function boxy (){
     mv /root/profile /etc/skel/.profile
   }
   
-  # Install Autologin + Autostartx
+  # Install Autologin + Autostartx le sed est propore a la distribution
   function auto (){
     # Autologin
     wget https://raw.githubusercontent.com/sayanjin/boxinstall/devel/autologin
