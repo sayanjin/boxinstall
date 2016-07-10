@@ -6,13 +6,9 @@ modifier interface, pour eviter de selectionner une option dans certines fenetre
 ce n'est pas intuitif et retour au 1er menu pour quitter le script, voir si l'installation doit etre en mute 
 avec un retour d'affichage pour un message de reussite...
 
-lister la partie openbox: dissocier openbox et xorg par exemple afin d'identifier les differents logiciel utilisés
-
 openbox: avoir un menu en fonction de nos install, pas celui du source (un generateur est possible)
-
-gdm si paquet dispo:
-  get gdm
-  sed -i "s/id:3:initdefaut:/id:5:initdefaut:/1" dialog*
+        ou un edit de chaque lignes
+        
 
 lxdm (eventuellement)
 peut-etre editer le "par defaut" du panneau penible de devoir cliquer pour choisir "openbox"
@@ -20,27 +16,18 @@ peut-etre editer le "par defaut" du panneau penible de devoir cliquer pour chois
 sectionner le choix des appli:
 openbox ; login manager; gestionnaire de fichiers; barre de tache (afin d'eviter d'en installer 2);log 
 
-ajout de logiciel utiles:
+ajout de logiciel utiles: il y en a plein, trop, l'idée est de rester light alors que je viens de proposer
+                          des log avec qt alors que la majorité fonctionne avec GTK.
 
-Onglet audio/video
+tint2= ajout de conf supplemetaire, la config de ce log peut etre tres poussé, je doit regarder si j'en choisi un ou 
+       si je peut le proposer dans les themes
 
-alsa
-gstreamer gstreamer-base en cocher
-les autres pack gstreamer
-
-une barre de tache est une priorité je pense, penible de "perdre" une application que l'on a reduit
-ou recuperation par le menu click droit:
-je verrai bien tint2 d'abord, a voir ou le lancer en auto et peut-etre avoir un conf predefinie
-
-tint2: a ajouter dans le autostart (/home/user/.config/openbox/autostart)
- on aurai un truc comme ca: echo tint2 & >> /etc/skel/.config/openbox/autostart
-                            echo tint2 & >> /etc/skel/.config/openbox/autostart
-                            attention au >>, un seul reset le fichier.
+mettre un standard de conky moins voyant que celui proposé et avoir wbar preconfiguré
 
 ajout de themes : quand j'aurai balayer les differents fichiers concernés (l'utilitée du etc/skel, gtkrc,...)
 
-paquets non dispo:
- pcmanfm
- wbar, le 32 bit fonctionne mais pas le 64
- les outils de conf, obconf, obmenu, lxappearance
- 
+probleme de son: viendrai de gstreamer qui ne sont pas installés a verifier
+
+ajout feh: pour la gestion d'un fond d'ecran
+
+inserer un taskmanager pour l'heure le volume du son, et l'icone internet

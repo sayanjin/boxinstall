@@ -1,7 +1,7 @@
 #!/bin/bash
 # boxinstall.sh - postinstall d'openbox
 # pour un environnement fonctionnel
-#version 04
+#version 07
 DIALOG={DIALOG=dialog}
 INPUT=/tmp/menu.sh.$$
  
@@ -28,13 +28,25 @@ function display_output(){
 # Purpose - display current system date & time
 #
 	
+#function boxy (){
+#	get xorg
+#	get openbox
+#	mkdir /etc/skel/.config
+#	cp -rf /etc/xdg/openbox /etc/skel/.config/openbox
+#	mkdir /root/.config
+#	cp -rf /etc/xdg/openbox /root/.config/openbox
+
 function boxy (){
 	get xorg
 	get openbox
+	wget https://raw.githubusercontent.com/sayanjin/boxinstall/master/menu.xml --no-check-certificate
+	cp -rf menu.xml /etc/xdg/openbox/
 	mkdir /etc/skel/.config
-	cp -rf /etc/xdg/openbox /etc/skel/.config/openbox
+	cp -rf /etc/xdg/openbox /etc/skel/.config/
 	mkdir /root/.config
-	cp -rf /etc/xdg/openbox /root/.config/openbox
+	cp -rf /etc/xdg/openbox /root/.config/
+	get obconf
+	get alsa-utils
 	
 }
 
@@ -47,7 +59,7 @@ function boxy (){
   
   ## Install startx
   #function stax (){
-    echo openbox > ~/.xinitrc
+    echo openbox-session > ~/.xinitrc
     cp ~/.xinitrc /etc/skel
   #}
   
@@ -57,12 +69,19 @@ function boxy (){
     get tango-icon-theme-extras
     get gnome-icon-theme
     get thunar 
-    get thunar-volman 
+    get thunar-volman
+    get thunar-archive-plugin
     get gvfs 
    # possibilte d'ajouter les liens dns le menu d'openbox 
    # et de modifier le theme selon
   }
   
+  #install pcmanfm 
+   function pcfm (){
+      get pcmanfm
+      get gvfs 
+}
+
   #wbar
   function wbar (){
 	  get wbar
@@ -72,6 +91,15 @@ function boxy (){
   #obmenu
   function menu (){
 	  get obmenu
+	  get python-gtk
+}
+
+  #numlockx
+  function numl (){
+	  get numlockx
+	  sed -i '$a\\ numlockx &' /etc/skel/.config/openbox/autostart
+      sed -i '$a\\ numlockx &' /root/.config/openbox/autostart
+	  
 }
 
   #conky
@@ -121,6 +149,26 @@ function boxy (){
 	  get midori
 }
 
+  #filezilla
+  function filz (){
+	  get filezilla
+}
+
+#transmission
+  function trsm (){
+	  get transmission
+}
+
+#pidgin
+  function pidg (){
+	  get pidgin
+}
+
+  #htop
+  function htop () {
+	  get htop
+}
+
   #gimp
   function gimp (){
 	  get gimp
@@ -133,6 +181,28 @@ function boxy (){
           sed -i '$a\\ tint2 &' /root/.config/openbox/autostart
 }
 
+#lxde-panel
+  function lxdp (){
+	  get lxde-panel
+	  sed -i '$a\\ lxpanel &' /etc/skel/.config/openbox/autostart
+          sed -i '$a\\ lxpanel &' /root/.config/openbox/autostart
+}
+
+#avidemux
+  function avid () {
+	  get avidemux
+}
+
+#avidemux
+  function hnbk () {
+	  get handbrake
+}
+
+#rhythmbox
+  function rtbx () {
+	  get rhythmbox
+}
+
   #mplayer
   function mpla () {
 	  get mplayer
@@ -143,6 +213,10 @@ function boxy (){
 	  get vlc
 }
 
+#user
+  function user () {
+	  nu
+}
 
 
 #
@@ -173,7 +247,7 @@ esac
  
  # Install Login
   dialog --backtitle "postconfiguration openbox" --title "Session" \
-  --ok-label "Valider" --cancel-label "Quitter" \
+  --ok-label "Valider" --cancel-label "Passer" \
   --radiolist "Veuillez choisir le mode de connexion à votre session.\nSélection avec la barre d'espace." 20 70 3 \
   "lxdm" "lxdm, gestionnaire de connexion graphique" on \
   "stax" "startx lance openbox apres login" off 2> "${INPUT}"
@@ -189,23 +263,27 @@ CONNEXION=$(<"${INPUT}")
   
   # Install File Manager
   dialog --backtitle "postconfiguration openbox" --title "Gestionnaire de fichiers" \
-  --ok-label "Valider" --cancel-label "Quitter" \
+  --ok-label "Valider" --cancel-label "Passer" \
   --radiolist "Installation de votre gestionnaire de fichiers préféré.\nSélection avec la barre d'espace." 20 70 2 \
-  "thun" "Thunar, avec theme tango" on 2> "${INPUT}" 
+  "thun" "Thunar, avec theme tango"  on \
+  "pcfm" "pcmanfm en test" off 2> "${INPUT}" 
   
   FILEMANAGER=$(<"${INPUT}")
   
   case $FILEMANAGER in
   thun) thun ;;
+  pcfm) pcfm ;;
   esac
   
   # --checklist texte hauteur largeur hauteur-de-liste [ marqueur1 item1 état] ...
   dialog --backtitle "postconfiguration openbox" --title "tools et menu bureau" \
-  --ok-label "Valider" --cancel-label "Quitter" \
+  --ok-label "Valider" --cancel-label "Passer" \
   --checklist "Cochez vos applications préférées avec la barre d'espace." 20 70 15 \
   "wbar" "barre d'applications (seulement en 32bits)" off \
-  "menu" "ob-menu gui pour gerer le menu openbox" on \
+  "numl" "numlockx permet d'activer en auto le padlock grandement recommandé sur pc fixe" on \
+  "menu" "obmenu gui pour gerer le menu openbox" on \
   "tint" "tint2 barre de tache" on \
+  "lxdp" "lxde panel" off\
   "conk" "conky moniteur system" off 2> "${INPUT}"
     
   # traitement de la réponse
@@ -213,29 +291,54 @@ CONNEXION=$(<"${INPUT}")
   do
   case $i in
   "wbar") wbar ;;
+  "numl") numl ;; 
   "menu") menu ;;
   "tint") tint ;;
+  "lxdp") lxdp ;;
   "conk") conk ;;
-  "mpla") mpla ;;
-  "vlcl") vlcl ;;
   esac
   done
  
   # Install utilitaire de conf
   
   # --checklist texte hauteur largeur hauteur-de-liste [ marqueur1 item1 état] ...
+  dialog --backtitle "postconfiguration openbox" --title "Choix log internet" \
+  --ok-label "Valider" --cancel-label "Passer" \
+  --checklist "Cochez vos applications préférées avec la barre d'espace." 20 70 15 \
+  "fire" "firefox naviguateur net" off \
+  "chro" "chromium nav internet" off \
+  "mido" "midori nav internet" off \
+  "pidg" "pidgin messagerie multiprotocol" off \
+  "trsm" "transmission client torrent" off \
+  "filz" "filezilla client FTP" off 2> "${INPUT}"
+    
+  # traitement de la réponse
+  for i in $(<"${INPUT}")
+  do
+  case $i in
+  "fire") fire ;;
+  "chro") chro ;;
+  "mido") mido ;;
+  "pidg") pidg ;;
+  "filz") filz ;;
+  "trsm") trsm ;;
+  esac
+  done
+  
+  # --checklist texte hauteur largeur hauteur-de-liste [ marqueur1 item1 état] ...
   dialog --backtitle "postconfiguration openbox" --title "Choix des applications" \
-  --ok-label "Valider" --cancel-label "Quitter" \
+  --ok-label "Valider" --cancel-label "Passer" \
   --checklist "Cochez vos applications préférées avec la barre d'espace." 20 70 15 \
   "leaf" "Leafpad, éditeur de texte " off \
   "gean" "geany editeur de txte " on \
   "abiw" "abiword editeur " on \
   "gnum" "gnumeric tableur " off \
   "xpdf" "Xpdf, suite d'outils pour PDF " off \
-  "fire" "firefox naviguateur net" off \
-  "chro" "chromium nav internet" off \
-  "mido" "midori nav internet" off \
-  "gimp" "editeur dessin" on \
+  "gimp" "editeur dessin" off \
+  "htop" "gestionnaire de taches" on \
+  "avid" "avidemux logiciel de video (qt-gui)" off\
+  "hnbk" "handbrake logiciel de video (qt-gui)" off\
+  "rtbx" "rhytmbox player de music " off\
   "mpla" "GNOME MPlayer, lecteur multimédia " on \
   "vlcl" "VLC, lecteur multimédia" off 2> "${INPUT}"
     
@@ -248,16 +351,30 @@ CONNEXION=$(<"${INPUT}")
   "abiw") abiw ;;
   "gnum") gnum ;;
   "xpdf") xpdf ;;
-  "fire") fire ;;
-  "chro") chro ;;
-  "mido") mido ;;
   "gimp") gimp ;;
+  "htop") htop ;;
+  "avid") avid ;;
+  "hnbk") hnbk ;;
+  "rtbx") rtbx ;;
   "mpla") mpla ;;
   "vlcl") vlcl ;;
   esac
   done
   
-done
+  # Install new user
+  dialog --backtitle "postconfiguration openbox" --title "nouvel utilisateur" \
+  --ok-label "Valider" --cancel-label "Passer" \
+  --radiolist "creer un nouvel user.\nSélection avec la barre d'espace." 20 70 2 \
+  "user" "creer un utilisateur non root"  on \
+  "Exit" "quitter l'installation" off 2> "${INPUT}" 
+  
+  NEWUSER=$(<"${INPUT}")
+  
+  case $NEWUSER in
+  user) user ; echo "Fin de la configuration"; break ;;
+  Exit) echo "Bye"; break;;
+  esac
+  done
  
 # if temp files found, delete em
 [ -f $OUTPUT ] && rm $OUTPUT
