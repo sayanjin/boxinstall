@@ -281,6 +281,8 @@ CONNEXION=$(<"${INPUT}")
   
   case $CONNEXION in
   lxdm) lxdm ;;
+  auto) auto;;
+  satr) star;;
   stax) stax ;;
   esac
   
