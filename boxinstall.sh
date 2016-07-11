@@ -94,6 +94,11 @@ function boxy (){
 	  get python-gtk
 }
 
+  #lxde appearance
+  function lxap (){
+	  get lxde-appearance-obconf
+}
+  
   #numlockx
   function numl (){
 	  get numlockx
@@ -193,7 +198,7 @@ function boxy (){
 	  get avidemux
 }
 
-#avidemux
+#handrake
   function hnbk () {
 	  get handbrake
 }
@@ -282,6 +287,7 @@ CONNEXION=$(<"${INPUT}")
   "wbar" "barre d'applications (seulement en 32bits)" off \
   "numl" "numlockx permet d'activer en auto le padlock grandement recommandé sur pc fixe" on \
   "menu" "obmenu gui pour gerer le menu openbox" on \
+  "lxap" "lxde-appearance-obconf pour gerer les themes" off \
   "tint" "tint2 barre de tache" on \
   "lxdp" "lxde panel" off\
   "conk" "conky moniteur system" off 2> "${INPUT}"
@@ -293,6 +299,7 @@ CONNEXION=$(<"${INPUT}")
   "wbar") wbar ;;
   "numl") numl ;; 
   "menu") menu ;;
+  "lxap") lxap ;;
   "tint") tint ;;
   "lxdp") lxdp ;;
   "conk") conk ;;
