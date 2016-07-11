@@ -96,6 +96,7 @@ function boxy (){
 
   #lxde appearance
   function lxap (){
+  	  get lxde-appearance
 	  get lxde-appearance-obconf
 }
   
