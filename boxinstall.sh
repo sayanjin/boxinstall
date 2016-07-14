@@ -331,7 +331,7 @@ CONNEXION=$(<"${INPUT}")
   --ok-label "Valider" --cancel-label "Passer" \
   --checklist "Cochez vos applications préférées avec la barre d'espace." 20 70 15 \
   "wbar" "barre d'applications (seulement en 32bits)" off \
-  "numl" "numlockx permet d'activer en auto le padlock grandement recommandé sur pc fixe" on \
+  "numl" "numlockx permet d'activer en auto le padnum " on \
   "menu" "obmenu gui pour gerer le menu openbox" on \
   "lxap" "lxde-appearance-obconf pour gerer les themes" off \
   "tint" "tint2 barre de tache" on \
@@ -354,9 +354,9 @@ CONNEXION=$(<"${INPUT}")
  
  # choix des themes
  # --checklist texte hauteur largeur hauteur-de-liste [ marqueur1 item1 état] ...
-  dialog --backtitle "postconfiguration openbox" --title "tools et menu bureau" \
+  dialog --backtitle "postconfiguration openbox" --title "theme" \
   --ok-label "Valider" --cancel-label "Passer" \
-  --checklist "Cochez vos applications préférées avec la barre d'espace." 20 70 15 \
+  --checklist "Cochez vos le theme selon vos gout." 20 70 15 \
   "thox" "theme d interface oxygen gtk2" off \
   "thau" "theme d'interface aurora" on \
   "thch" "theme d'icone hicolor" on \
