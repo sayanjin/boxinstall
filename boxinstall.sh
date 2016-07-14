@@ -65,9 +65,6 @@ function boxy (){
   
    # Install Thunar
   function thun (){
-	get tango-icon-theme
-    get tango-icon-theme-extras
-    get gnome-icon-theme
     get thunar 
     get thunar-volman
     get thunar-archive-plugin
@@ -239,6 +236,34 @@ function boxy (){
     get st
   }
 
+###### themes
+
+  # Install theme d interface oxygen gtk2
+  function htox (){
+    get oxygen-gtk2
+  }
+  
+  # Install theme d'interface aurora
+  function thau (){
+    get aurora
+  }
+  
+  # Install theme d'icone hicolor
+  function thch (){
+    get hicolor-icon-theme
+  }
+  
+  # Install theme d'icone tango
+  function thta (){
+    get tango-icon-theme
+    get tango-icon-theme-extras
+  }
+  
+  # Install theme d'icone lxde
+  function thlx (){
+    get lxde-icon-theme
+  }
+  
 #user
   function user () {
 	  nu
@@ -327,6 +352,29 @@ CONNEXION=$(<"${INPUT}")
   esac
   done
  
+ # choix des themes
+ # --checklist texte hauteur largeur hauteur-de-liste [ marqueur1 item1 état] ...
+  dialog --backtitle "postconfiguration openbox" --title "tools et menu bureau" \
+  --ok-label "Valider" --cancel-label "Passer" \
+  --checklist "Cochez vos applications préférées avec la barre d'espace." 20 70 15 \
+  "thox" "theme d interface oxygen gtk2" off \
+  "thau" "theme d'interface aurora" on \
+  "thch" "theme d'icone hicolor" on \
+  "thta" "theme d'icone tango" off \
+  "thlx" "theme d'icone lxde" off 2> "${INPUT}"
+    
+  # traitement de la réponse
+  for i in $(<"${INPUT}")
+  do
+  case $i in
+  "thox") thox ;;
+  "thau") thau ;; 
+  "thch") thch ;;
+  "thta") thta ;;
+  "thlx") thlx ;;
+  esac
+  done
+  
   # Install utilitaire de conf
   
   # --checklist texte hauteur largeur hauteur-de-liste [ marqueur1 item1 état] ...
