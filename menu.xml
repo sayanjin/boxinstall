@@ -68,6 +68,11 @@
 				</startupnotify>
 			</action>
 		</item>
+		<item label="st">
+			<action name="Execute">
+				<execute>st</execute>
+			</action>
+		</item>
 		<item label="Xterm">
 			<action name="Execute">
 				<command>xterm</command>
@@ -229,6 +234,18 @@
 			</action>
 		</item>
 	</menu>
+	<menu id="apps-devel-menu" label="Dev">
+		<item label="virtualbox">
+			<action name="Execute">
+				<execute>/usr/bin/VirtualBox</execute>
+			</action>
+		</item>
+		<item label="codeblocks">
+			<action name="Execute">
+				<execute>codeblocks</execute>
+			</action>
+		</item>
+	</menu>
 	<menu id="system-menu" label="System">
 		<item label="obmenu">
 			<action name="Execute">
@@ -283,6 +300,7 @@
 		<menu id="apps-multimedia-menu"/>
 		<menu id="apps-term-menu"/>
 		<menu id="apps-fileman-menu"/>
+		<menu id="apps-devel-menu"/>
 		<separator label="System"/>
 		<menu id="system-menu"/>
 		<separator/>
