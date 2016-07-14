@@ -219,6 +219,26 @@ function boxy (){
 	  get vlc
 }
 
+# Install rvxt-unicode
+  function rvxt (){
+    get rvxt-unicode
+  }
+  
+  # Install st terminal
+  function sttx (){
+    get st
+  }
+  
+  # Install virtualbox
+  function vbox (){
+    get rvxt-unicode
+  }
+  
+  # Install codeblocks
+  function cdbk (){
+    get st
+  }
+
 #user
   function user () {
 	  nu
@@ -337,6 +357,8 @@ CONNEXION=$(<"${INPUT}")
   dialog --backtitle "postconfiguration openbox" --title "Choix des applications" \
   --ok-label "Valider" --cancel-label "Passer" \
   --checklist "Cochez vos applications préférées avec la barre d'espace." 20 70 15 \
+  "uxvt" "terminal uxvt-unicode " off \
+  "sttx" "terminal st " on \
   "leaf" "Leafpad, éditeur de texte " off \
   "gean" "geany editeur de txte " on \
   "abiw" "abiword editeur " on \
@@ -346,6 +368,8 @@ CONNEXION=$(<"${INPUT}")
   "htop" "gestionnaire de taches" on \
   "avid" "avidemux logiciel de video (qt-gui)" off\
   "hnbk" "handbrake logiciel de video (qt-gui)" off\
+  "vbox" "virtualbox" off\
+  "cdbk" "codeblocks" off\
   "rtbx" "rhytmbox player de music " off\
   "mpla" "GNOME MPlayer, lecteur multimédia " on \
   "vlcl" "VLC, lecteur multimédia" off 2> "${INPUT}"
@@ -354,6 +378,8 @@ CONNEXION=$(<"${INPUT}")
   for i in $(<"${INPUT}")
   do
   case $i in
+  "uxvt") uxvt ;;
+  "sttx") sttx ;;
   "leaf") leaf ;;
   "gean") gean ;;
   "abiw") abiw ;;
@@ -363,6 +389,8 @@ CONNEXION=$(<"${INPUT}")
   "htop") htop ;;
   "avid") avid ;;
   "hnbk") hnbk ;;
+  "vbox") vbox ;;
+  "cdbk") cdbk ;;
   "rtbx") rtbx ;;
   "mpla") mpla ;;
   "vlcl") vlcl ;;
