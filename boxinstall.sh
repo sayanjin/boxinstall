@@ -316,8 +316,8 @@ CONNEXION=$(<"${INPUT}")
   dialog --backtitle "postconfiguration openbox" --title "Gestionnaire de fichiers" \
   --ok-label "Valider" --cancel-label "Passer" \
   --radiolist "Installation de votre gestionnaire de fichiers préféré.\nSélection avec la barre d'espace." 20 70 2 \
-  "thun" "Thunar, avec theme tango"  on \
-  "pcfm" "pcmanfm en test" off 2> "${INPUT}" 
+  "thun" "Thunar"  on \
+  "pcfm" "pcmanfm" off 2> "${INPUT}" 
   
   FILEMANAGER=$(<"${INPUT}")
   
