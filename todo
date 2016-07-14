@@ -24,10 +24,9 @@ tint2= ajout de conf supplemetaire, la config de ce log peut etre tres poussé, 
 
 mettre un standard de conky moins voyant que celui proposé et avoir wbar preconfiguré
 
-ajout de themes : quand j'aurai balayer les differents fichiers concernés (l'utilitée du etc/skel, gtkrc,...)
+THEMES : quand j'aurai balayer les differents fichiers concernés (l'utilitée du etc/skel, gtkrc,...)
+        lxappearance permet de choisir les themes de fenetrage et d'icones, mais les thunar et pcmanfm ne sont pas influer par lx appearance, voir ou se situe le probleme
+        surement dans les fchiers .conf, ou .profile
 
-probleme de son: viendrai de gstreamer qui ne sont pas installés a verifier
 
 ajout feh: pour la gestion d'un fond d'ecran
-
-inserer un taskmanager pour l'heure le volume du son, et l'icone internet
