@@ -39,12 +39,16 @@ function display_output(){
 function boxy (){
 	get xorg
 	get openbox
+	get xdg-user-dirs
+	get python-xdg
+	get xcompmgr
 	wget https://raw.githubusercontent.com/sayanjin/boxinstall/master/menu.xml --no-check-certificate
 	cp -rf menu.xml /etc/xdg/openbox/
 	mkdir /etc/skel/.config
 	cp -rf /etc/xdg/openbox /etc/skel/.config/
 	mkdir /root/.config
 	cp -rf /etc/xdg/openbox /root/.config/
+	mkdir .theme /etc/skel
 	get obconf
 	get alsa-utils
 	
