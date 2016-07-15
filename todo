@@ -28,5 +28,8 @@ THEMES : quand j'aurai balayer les differents fichiers concernés (l'utilitée d
         lxappearance permet de choisir les themes de fenetrage et d'icones, mais les thunar et pcmanfm ne sont pas influer par lx appearance, voir ou se situe le probleme
         surement dans les fchiers .conf, ou .profile
 
+icone de son= fonctionne sur lxpanel mais seulement en root
+
+xcompmgr -c -f permet d'activer l'ombrage
 
 ajout feh: pour la gestion d'un fond d'ecran
