@@ -304,8 +304,8 @@ esac
   dialog --backtitle "postconfiguration openbox" --title "Session" \
   --ok-label "Valider" --cancel-label "Passer" \
   --radiolist "Veuillez choisir le mode de connexion à votre session.\nSélection avec la barre d'espace." 20 70 3 \
-  "lxdm" "lxdm, gestionnaire de connexion graphique" on \
-  "stax" "startx lance openbox apres login" off 2> "${INPUT}"
+  "lxdm" "lxdm, gestionnaire de connexion graphique" on 2> "${INPUT}"
+  #"stax" "startx lance openbox apres login" off 2> "${INPUT}"
   
 CONNEXION=$(<"${INPUT}")
   
