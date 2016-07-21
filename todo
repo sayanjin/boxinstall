@@ -6,30 +6,19 @@ modifier interface, pour eviter de selectionner une option dans certines fenetre
 ce n'est pas intuitif et retour au 1er menu pour quitter le script, voir si l'installation doit etre en mute 
 avec un retour d'affichage pour un message de reussite...
 
-openbox: avoir un menu en fonction de nos install, pas celui du source (un generateur est possible)
-        ou un edit de chaque lignes
-        
-
-lxdm (eventuellement)
-peut-etre editer le "par defaut" du panneau penible de devoir cliquer pour choisir "openbox"
+lxdm editer le "par defaut" du panneau penible de devoir cliquer pour choisir "openbox"
 
 sectionner le choix des appli:
 openbox ; login manager; gestionnaire de fichiers; barre de tache (afin d'eviter d'en installer 2);log 
 
-ajout de logiciel utiles: il y en a plein, trop, l'idée est de rester light alors que je viens de proposer
-                          des log avec qt alors que la majorité fonctionne avec GTK.
-
-tint2= ajout de conf supplemetaire, la config de ce log peut etre tres poussé, je doit regarder si j'en choisi un ou 
-       si je peut le proposer dans les themes
-
-mettre un standard de conky moins voyant que celui proposé et avoir wbar preconfiguré
+tint2= ajout d'un volumeicone, peut etre assi un applet ethernet
 
 THEMES : quand j'aurai balayer les differents fichiers concernés (l'utilitée du etc/skel, gtkrc,...)
         lxappearance permet de choisir les themes de fenetrage et d'icones, mais les thunar et pcmanfm ne sont pas influer par lx appearance, voir ou se situe le probleme
         surement dans les fchiers .conf, ou .profile
 
-icone de son= fonctionne sur lxpanel mais seulement en root
+icone de son= fonctionne sur lxpanel mais seulement en root == pb initab
 
 xcompmgr -c -f permet d'activer l'ombrage
 
-ajout feh: pour la gestion d'un fond d'ecran
+log a ajouter: brasero, thunder, feh/nitrogen, gparted
