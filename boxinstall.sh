@@ -1,7 +1,7 @@
 #!/bin/bash
 # boxinstall.sh - postinstall d'openbox
 # pour un environnement fonctionnel
-#version 07
+#version 09
 DIALOG={DIALOG=dialog}
 INPUT=/tmp/menu.sh.$$
  
